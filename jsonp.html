@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="" id="txt" value="" />
+		<ul id="uu">
+		</ul>
+	</body>
+	<script src="../php/jquery-3.1.1.js" type="text/javascript" charset="utf-8"></script>
+
+	<script type="text/javascript">
+				var os = null;
+				var ul = document.getElementById("uu")
+		function fn1(data){
+			ul.innerHTML = ''
+			data.g.forEach(function(e,i){
+				var li = document.createElement('li');
+				li.innerHTML = e.q;
+				ul.appendChild(li);	
+			})
+							
+
+		}
+		
+		$('#txt').keyup(function(){
+			os = document.createElement('script');
+			os.src  = 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd='+$('#txt').val()+'&json=1&p=3&sid=1428_19036_21084_17001_22036&req=2&csor=1&cb=fn1';
+			document.getElementsByTagName('head')[0].appendChild(os);
+			document.getElementsByTagName('head')[0].removeChild(os);
+		})
+	</script>
+</html>
